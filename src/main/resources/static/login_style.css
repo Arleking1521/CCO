@@ -41,14 +41,26 @@ main{
     height: 50px;
     text-align: center;
     font-size: 50px;
+    font-weight: 500;
+    text-shadow: rgb(232,17,21) -5px -5px 4px;
 }
 
-.card{
+.card-log{
     width: 400px;
     height: 250px;
     border: 1px solid rgb(128, 143, 140);
     border-radius:  0 30px 0 30px;
     background: none;
+    box-shadow:  -3px -3px 10px rgba(128, 143, 140, 0.5), inset -3px -3px 10px rgba(128, 143, 140, 0.5);
+}
+
+.card-reg{
+    width: 400px;
+    height: 300px;
+    border: 1px solid rgb(128, 143, 140);
+    border-radius:  0 30px 0 30px;
+    background: none;
+    box-shadow:  -3px -3px 10px rgba(128, 143, 140, 0.5), inset -3px -3px 10px rgba(128, 143, 140, 0.5);
 }
 
 .card-header{
@@ -61,9 +73,14 @@ main{
     border-bottom: solid 1px rgb(128, 143, 140);
 }
 
-.card-body{
-    width: 100%;
+.card-body-log{
+    width: 380px;
     height: 150px;
+}
+
+.card-body-reg{
+    width: 380px;
+    height: 200px;
 }
 
 .form{
@@ -99,7 +116,14 @@ main{
 }
 
 .reg-text{
+    display: flex;
     width: 200px;
     height: 50px;
     font-size: 15px;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    text-decoration: underline;
+    color: rgb(192, 228, 220);
 }
