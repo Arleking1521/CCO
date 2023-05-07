@@ -20,7 +20,9 @@ public class User
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "user_id_sequense", sequenceName = "user_id_sequense", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_sequense")
+    @Column(name = "id", columnDefinition = "serial primary key")
     private Long id;
 
     @Column(nullable=false)
@@ -32,21 +34,18 @@ public class User
     @Column(nullable=false)
     private String password;
 
+    @Column(nullable=false)
+    private String role;
+
     @Column(name = "exp")
     private Long exp;
-    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinTable(
-            name="users_level",
-            joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
-            inverseJoinColumns={@JoinColumn(name="LEVEL_ID", referencedColumnName="ID")})
-    private List<Level> level = new ArrayList<>();
-
-    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinTable(
-            name="users_roles",
-            joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
-            inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
-    private List<Role> roles = new ArrayList<>();
 
 
+    public User(String name, String email, String password, String role, Long exp) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.exp = exp;
+    }
 }

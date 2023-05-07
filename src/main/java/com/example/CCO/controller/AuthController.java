@@ -2,62 +2,66 @@ package com.example.CCO.controller;
 
 import com.example.CCO.dto.UserDto;
 import com.example.CCO.entity.User;
+import com.example.CCO.exceptions.UserAlreadyExistsException;
+import com.example.CCO.exceptions.UserNotFoundException;
+import com.example.CCO.exceptions.WrongPasswordException;
+import com.example.CCO.security.JwtUtils;
 import com.example.CCO.service.UserService;
+import com.example.CCO.service.impl.UserServiceImpl;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
 public class AuthController {
 
-    private UserService userService;
+    @Autowired
+    private UserServiceImpl userService;
 
-    public AuthController(UserService userService) {
-        this.userService = userService;
-    }
 
-    @GetMapping("/index")
-    public String home(Model model){
-        List<UserDto> users = userService.findAll();
-        model.addAttribute("users", users);
-        return "index";
-    }
+    @Autowired
+    JwtUtils jwtUtils;
 
-    @GetMapping("/")
-    public String loginForm() {
-        return "login";
-    }
-
-    // handler method to handle user registration request
-    @GetMapping("register")
-    public String showRegistrationForm(Model model){
-        UserDto user = new UserDto();
-        model.addAttribute("user", user);
-        return "register";
-    }
-
-    // handler method to handle register user form submit request
-    @PostMapping("/register/save")
-    public String registration(@Valid @ModelAttribute("user") UserDto user,
-                               BindingResult result,
-                               Model model){
-        User existing = userService.findByEmail(user.getEmail());
-        if (existing != null) {
-            result.rejectValue("email", null, "There is already an account registered with that email");
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody UserDto user) {
+        try {
+            userService.register(user);
+            return ResponseEntity.ok(jwtUtils.generateToken(user.getEmail()));
+        } catch (UserAlreadyExistsException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("An error occurred on the server");
         }
-        if (result.hasErrors()) {
-            model.addAttribute("user", user);
-            return "register";
-        }
-
-        userService.saveUser(user);
-        return "redirect:/register?success";
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserDto user) {
+        try {
+            userService.login(user);
+            return ResponseEntity.ok(jwtUtils.generateToken(user.getEmail()));
+        } catch (UserNotFoundException | WrongPasswordException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+
+    @GetMapping("/check")
+    public ResponseEntity<?> check(@RequestHeader(HttpHeaders.AUTHORIZATION) String auth) {
+        String token = jwtUtils.restructJwtHeader(auth);
+        if (token != null) {
+            if (jwtUtils.validateToken(token)) {
+                return ResponseEntity.ok(jwtUtils.generateToken(jwtUtils.getEmailFromToken(token)));
+            }
+        }
+        return ResponseEntity.ok("LOGOUT");
+    }
+
 
 }

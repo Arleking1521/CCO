@@ -11,9 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto
-{
-    private Long id;
+public class UserDto {
     @NotEmpty
     private String nickName;
     @NotEmpty(message = "Email should not be empty")
@@ -21,6 +19,7 @@ public class UserDto
     private String email;
     @NotEmpty(message = "Password should not be empty")
     private String password;
+    private String role;
 
 
 }

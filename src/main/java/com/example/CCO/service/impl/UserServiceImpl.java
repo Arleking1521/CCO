@@ -2,12 +2,16 @@ package com.example.CCO.service.impl;
 
 import com.example.CCO.dto.UserDto;
 import com.example.CCO.entity.Level;
-import com.example.CCO.entity.Role;
 import com.example.CCO.entity.User;
+import com.example.CCO.exceptions.UserAlreadyExistsException;
+import com.example.CCO.exceptions.UserNotFoundException;
+import com.example.CCO.exceptions.WrongPasswordException;
 import com.example.CCO.repository.LevelRepository;
-import com.example.CCO.repository.RoleRepository;
 import com.example.CCO.repository.UserRepository;
+import com.example.CCO.security.Hasher;
+import com.example.CCO.security.JwtUtils;
 import com.example.CCO.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,67 +21,29 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
 
+    @Autowired
     private UserRepository userRepository;
-    private RoleRepository roleRepository;
-    private PasswordEncoder passwordEncoder;
-    private LevelRepository levelRepository;
 
-    public UserServiceImpl(UserRepository userRepository,
-                           RoleRepository roleRepository,
-                           PasswordEncoder passwordEncoder,
-                           LevelRepository levelRepository) {
-        this.levelRepository = levelRepository;
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
-    @Override
-    public void saveUser(UserDto userDto) {
-        User user = new User();
-        user.setName(userDto.getNickName());
-        user.setEmail(userDto.getEmail());
-
-        //encrypt the password once we integrate spring security
-        //user.setPassword(userDto.getPassword());
-        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-        Role role = roleRepository.findByName("ROLE_PLAYER");
-        if(role == null){
-            role = checkRoleExist();
+    public void register(UserDto authRequest) throws UserAlreadyExistsException {
+        if (userRepository.existsByEmail(authRequest.getEmail())) {
+            throw new UserAlreadyExistsException("Email is already in use.");
         }
-        Level level = levelRepository.findById(BigInteger.valueOf(1));
-        user.setLevel(Arrays.asList(level));
-        user.setExp(0L);
-        user.setRoles(Arrays.asList(role));
+        User user = new User(authRequest.getNickName(), authRequest.getEmail(), Hasher.encryptMD5(authRequest.getPassword()), "ROLE_PLAYER", 0L);
         userRepository.save(user);
     }
 
-    @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public void login(UserDto authRequest) throws UserNotFoundException, WrongPasswordException {
+        if (!userRepository.existsByEmail(authRequest.getEmail())) {
+            throw new UserNotFoundException(authRequest.getEmail());
+        }
+        User entity = userRepository.findByEmail(authRequest.getEmail());
+        if (!Hasher.encryptMD5(authRequest.getPassword()).equals(entity.getPassword())) {
+            throw new WrongPasswordException(authRequest.getEmail());
+        }
     }
 
-    @Override
-    public List<UserDto> findAll() {
-        List<User> users = userRepository.findAll();
-        return users.stream().map((user) -> convertEntityToDto(user))
-                .collect(Collectors.toList());
-    }
-
-    private UserDto convertEntityToDto(User user){
-        UserDto userDto = new UserDto();
-        String[] name = user.getName().split(" ");
-        userDto.setNickName(user.getName());
-        userDto.setEmail(user.getEmail());
-        return userDto;
-    }
-
-    private Role checkRoleExist() {
-        Role role = new Role();
-        role.setName("ROLE_PLAYER");
-        return roleRepository.save(role);
-    }
 
 }
