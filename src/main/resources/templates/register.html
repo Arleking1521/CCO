@@ -32,11 +32,11 @@
                                 <form method="post" role="form" th:action="@{/register/save}" th:object="${user}" class="form">
 
                                     <div class="inputs">
-                                        <label class="form-label">Nickame</label>
+                                        <label class="form-label">Nickame:</label>
                                         <input class="form-control"
                                             id="nickname"
                                             name="nickname"
-                                            placeholder="Enter first name"
+                                            placeholder="Create your nickname"
                                             th:field="*{nickName}"
                                             type="text"
                                         />
@@ -46,7 +46,7 @@
                                     </div>
 
                                     <div class="inputs">
-                                        <label class="control-label">Email</label>
+                                        <label class="control-label">Email:</label>
                                         <input class="form-control"
                                             id="email"
                                             name="email"
@@ -59,7 +59,7 @@
                                         </p>
                                     </div>
                                     <div class="inputs">
-                                        <label class="control-label">Password</label>
+                                        <label class="control-label">Password:</label>
                                         <input class="form-control"
                                             id="password"
                                             name="password"
@@ -74,7 +74,7 @@
 
                                     <div class="inputs">
                                         <button class="btn " type="submit">Register</button>
-                                        <span class="reg-text"> <a href="/" th:href="@{/login}">Already registered?</a></span>
+                                        <span class="reg-text"> <a href="/" th:href="@{/}">Already registered?</a></span>
                                     </div>
                                 </form>
                             </div>

@@ -22,12 +22,14 @@ public class AuthController {
         this.userService = userService;
     }
 
-    @GetMapping("index")
-    public String home(){
+    @GetMapping("/index")
+    public String home(Model model){
+        List<UserDto> users = userService.findAll();
+        model.addAttribute("users", users);
         return "index";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String loginForm() {
         return "login";
     }
@@ -53,6 +55,7 @@ public class AuthController {
             model.addAttribute("user", user);
             return "register";
         }
+
         userService.saveUser(user);
         return "redirect:/register?success";
     }
