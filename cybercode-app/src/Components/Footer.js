@@ -4,7 +4,8 @@ import {Nav} from 'react-bootstrap'
 
 
 import Header from './Header';
-import InvHeader from './InvHeader' 
+import InvHeader from './InvHeader'
+import Profile from '../pages/profile'
 
 export default class Footer extends Component {
     render() {
@@ -14,6 +15,7 @@ export default class Footer extends Component {
                 <Routes>
                     <Route exact path='/' element={<Header />} />
                     <Route exact path='/inventory' element={<InvHeader />} />
+                    <Route exact path='/profile' element={<Profile />} />
                 </Routes>
 
                 <footer>
@@ -26,7 +28,7 @@ export default class Footer extends Component {
                             <div class="inv-img"></div>
                             <div class="inv-name">INVENTORY</div>
                         </Nav.Link>
-                        <Nav.Link class="profile-nl">
+                        <Nav.Link class="profile-nl" as={Link} to="/profile">
                             <div class="prof-img"></div>
                             <div class="prof-name">PROFILE</div>
                         </Nav.Link>

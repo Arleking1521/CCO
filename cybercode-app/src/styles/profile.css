@@ -1,0 +1,75 @@
+.prof-main{
+    margin-top: 60px;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+}
+
+.player-datas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 300px;
+    border: solid 1px rgb(192, 228, 220);
+    border-radius: 0 20px 0 20px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 55%;
+    height: 300px;
+    background: none;
+}
+
+.profile-img{
+    background-image: url(../images/empty-profile.jpeg);
+    background-size: 100%;
+    width: 300px;
+    height: 300px;
+}
+.ramka{
+    background: none;
+    width: 100%;
+}
+
+.prof-nickName{
+    width: 90%;
+    height: 60px;
+    border: solid 1px rgb(91, 91, 91);
+}
+.prof-level{
+    width: 90%;
+    height: 60px;
+    border: solid 1px rgb(91, 91, 91);
+}
+.prof-coins{
+    width: 90%;
+    height: 60px;
+    border: solid 1px rgb(91, 91, 91);
+}
+.prof-title{
+    width: 90%;
+    height: 60px;
+    border: solid 1px rgb(91, 91, 91);
+}
+
+.btn-logout{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    color: red;
+    font-size: 25px;
+    font-weight: 600;
+    border: solid 2px red;
+    border-radius: 0 0  20px 0;
+    cursor:pointer
+}

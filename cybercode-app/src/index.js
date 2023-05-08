@@ -4,6 +4,7 @@ import './index.css';
 import './styles/login_style.css'
 import './styles/style.css'
 import './styles/inventory.css'
+import './styles/profile.css'
 
 import PageView from './pages/PageView'
 import reportWebVitals from './reportWebVitals';

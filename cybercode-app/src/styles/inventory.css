@@ -60,7 +60,7 @@
 .invCell-img{
     width: 80px;
     height: 80px;
-    border: solid 1px red;
+    border: solid 1px rgb(91, 91, 91);
 }
 
 .invCell-desc{
