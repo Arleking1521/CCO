@@ -27,26 +27,15 @@
 /* ======================================================================================================================== */
 
 body{
-    margin: 0;
+    margin-left: 20%;
+    margin-right: 20%;
     font-family: 'Rajdhani';
 }
 
-#root{
-    width: 100%;
-    height: 100% ;
-    display: flex;
-    flex-direction: row;
-}
 
 .mainPart{
-    width: 70% ;
+    width: 100% ;
     height: 100%;
-}
-
-.leftPart{
-    width: 30%;
-    height: 100%;
-    border: solid 1px red;
 }
 
 /* ==========================================================HEADER======================================================== */
@@ -58,8 +47,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    height: 70px;
+    width: 60%;
+    height: 50px;
     box-shadow: 0 10px 10px rgb(30, 30, 30);
 }
 
@@ -67,8 +56,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: solid 1px rgb(192, 228, 220);
     border-radius: 0 0 0 15px;
     color: rgb(192, 228, 220);
@@ -162,7 +151,7 @@ header{
 
 /* ============================================================MAIN========================================================= */
 
-main{
+.main{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -450,7 +439,7 @@ footer{
     position: fixed;
     bottom: 0;
     display: flex;
-    width: 70%;
+    width: 60%;
     height: 50px;
 }
 

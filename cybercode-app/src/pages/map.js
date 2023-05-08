@@ -21,7 +21,7 @@ export default class map extends Component {
     render() {
         return (
             <>
-                <main>
+                <div className='main'>
                     <div className="info-pic">
                         <div className="page-name"> Shangri-La City Center </div>
                         <div className="page-info">
@@ -109,7 +109,7 @@ export default class map extends Component {
                             </div>
                         </div>
                     </div>
-                </main>
+                </div>
             </>
         )
     }

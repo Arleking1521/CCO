@@ -8,9 +8,7 @@ export default class MainPart extends Component {
         return (
             <>
                 <Router>
-                    <Routes>
-                        <Route exact path='/' element={<Footer/>} />
-                    </Routes>
+                    <Footer/>
                 </Router>
             </>
         )
