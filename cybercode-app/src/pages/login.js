@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Logo from "../images/logo.jpeg"
 
-export default class inventory extends Component {
+export default class login extends Component {
     render() {
         return (
             <>
