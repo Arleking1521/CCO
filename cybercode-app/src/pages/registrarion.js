@@ -9,7 +9,7 @@ export default class registration extends Component {
             <main>
                 <div className="logo">
                     <div className="logo-img">
-                        <img src={Logo} width="100%">
+                        <img src={Logo} width="100%"/>
                     </div>
                     <div className="logo-name">CyberCodeOnline</div>
                 </div>
@@ -79,7 +79,6 @@ export default class registration extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
             </main>
             </>
         )
