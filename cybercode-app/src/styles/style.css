@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+*{
+    background-color: rgb(30, 30, 30);
+    padding: 0;
+    margin: 0;
+}
+
+/* ======================================custom scrollbar================================================================== */
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(91, 91, 91);
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(128, 143, 140);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(192, 228, 220);
+}
+
+/* ======================================================================================================================== */
+
+body{
+    margin: 0;
+    font-family: 'Rajdhani';
+}
+
+#root{
+    width: 100%;
+    height: 100% ;
+    display: flex;
+    flex-direction: row;
+}
+
+.mainPart{
+    width: 70% ;
+    height: 100%;
+}
+
+.leftPart{
+    width: 30%;
+    height: 100%;
+    border: solid 1px red;
+}
+
+/* ==========================================================HEADER======================================================== */
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70px;
+    box-shadow: 0 10px 10px rgb(30, 30, 30);
+}
+
+.level-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: solid 1px rgb(192, 228, 220);
+    border-radius: 0 0 0 15px;
+    color: rgb(192, 228, 220);
+    font-size: 25px;
+}
+
+.prof-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+
+/* ----------------------------------------------------player-info---------------------------------------------------- */
+
+.player-info{
+    display: flex;
+    flex-direction: row;
+    height: 15px;
+    color: rgb(192, 228, 220);
+    font-weight: 600;
+}
+
+.nickname{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+.bandName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+/* ---------------------------------------------level-info-------------------------------------------------- */
+
+.level-info{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 10px;
+}
+
+.level-bar{
+    display: flex;
+    width: 80%;
+    height: 10px;
+    border: solid blue 2px;
+}
+
+.exp-count{
+    display: flex;
+    width: 20%;
+    height: 10px;
+    border: solid green 2px;
+}
+
+/* ---------------------------------------------moneys-info----------------------------------------------- */
+
+.moneys{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 200px;
+    height: 15px;
+    color: rgb(192, 228, 220);
+    font-weight: 500;
+}
+
+.btc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+.units{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+/* ============================================================MAIN========================================================= */
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 1300px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+/* ----------------------------------------------info-pic--------------------------------------------------- */
+
+.info-pic{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 300px;
+    background-image: url(../images/city-background-mainPage.jpg);
+    background-size: 100%;
+    align-items: center;
+}
+
+.page-name{
+    display: flex;
+    position: relative;
+    top: 5%;
+    width: 80%;
+    height: 50px;
+    background: none;
+    text-shadow: yellow -5px -6px 5px;
+    color: yellow;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.page-info{
+    display: flex;
+    position: relative;
+    top: 37%;
+    width: 80%;
+    height: 100px;
+    background: none;
+    color: rgb(192, 228, 220);
+}
+.back-img{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    filter: blur(6px);
+    background-image: url(../images/blur-img.jpg);
+    background-size: 100%;
+}
+.info{
+    position: absolute;
+    display: flex;
+    background: none;
+    padding: 20px;
+}
+
+/* ------------------------------------------------------actons---------------------------------------------------- */
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    height: 350px;
+}
+
+.chapter-name{
+    display: flex;
+    align-items: center;
+    width: 98.5%;
+    height: 35px;
+    border: solid 1px rgb(91, 91, 91);
+    color: rgb(192, 228, 220);
+    padding-left: 10px;
+    border-radius: 0 0 10px 0;
+}
+
+.act-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+}
+
+/* ...........................................act-items.................................. */
+
+.act-items{
+    display: flex;
+    width: 220px;
+    height: 80px;
+    border: solid 1px rgb(192, 228, 220);
+    background: none;
+    align-items: center;
+    justify-content: center;
+    color: rgb(192, 228, 220);
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.act-item-img{
+    display: flex;
+    width: 40px;
+    height: 40px;
+}
+
+.act-item-name{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+/* .......................................exchange-ofice..................................... */
+
+.exchange-office{
+    border: solid 1px yellow;
+    box-shadow:  -3px -3px 10px rgba(255, 255, 0, 0.514), inset -3px -3px 10px rgba(255, 255, 0, 0.514);
+    color: yellow;
+    font-size: 15px;
+    text-shadow: yellow -5px -6px 5px;
+    transition: 0.5s;
+}
+
+.exchange-office:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................cyberwear........................................ */
+
+.cyberwear{
+    border: solid 1px yellow;
+    box-shadow:  -3px -3px 10px rgba(255, 255, 0, 0.514), inset -3px -3px 10px rgba(255, 255, 0, 0.514);
+    color: yellow;
+    font-size: 15px;
+    text-shadow: yellow -5px -6px 5px;
+    transition: 0.5s;
+}
+
+.cyberwear:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................printer........................................ */
+.printer{
+    transition: 0.5s;
+}
+
+.printer:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................weapon-smith........................................ */
+
+.weapon-smith{
+    transition: 0.5s;
+}
+
+.weapon-smith:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................mart........................................ */
+
+.mart{
+    transition: 0.5s;
+}
+
+.mart:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................terminal........................................ */
+
+.terminal{
+    transition: 0.5s;
+}
+
+.terminal:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................bank........................................ */
+
+.bank{
+    transition: 0.5s;
+}
+
+.bank:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................trade-post........................................ */
+
+.trade-post{
+    transition: 0.5s;
+}
+
+.trade-post:active{
+    transform: scale(0.9);
+}
+
+/* ..........................................cali-station........................................ */
+
+.cali-station{
+    transition: 0.5s;
+}
+
+.cali-station:active{
+    transform: scale(0.9);
+}
+
+/* ---------------------------------------------------go-to------------------------------------------------- */
+
+.go-to{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+    height: 650px;
+    text-decoration: none;
+}
+
+/* ..........................................gt-items........................................ */
+
+.gt-items{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+    border: solid 1px rgb(128, 143, 140);
+    border-radius:0 30px 0 30px ;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.gt-item-img{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 75px;
+    height: 75px;
+}
+
+.gt-item-info{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 90px;
+    color: rgb(192, 228, 220);
+    margin-left: 20px;
+}
+
+.gt-item-name{
+    display: flex;
+    width: 600px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.gt-item-descript{
+    display: flex;
+    color: rgb(128, 143, 140);
+    width: 600px;
+    height: 60px;
+    font-size: 20px;
+}
+
+/* =================================================================FOOTER========================================================= */
+
+footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 70%;
+    height: 50px;
+}
+
+/* ----------------------------------------------------menu------------------------------------------ */
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+    border-top: solid 1px rgb(91, 91, 91) ;
+}
+
+.nav-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* ...........................................map......................................... */
+
+.map-img{
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/map.png);
+    background-size: 100%;
+}
+
+.map-name{
+    width: 45px;
+    height: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: rgb(192, 228, 220);
+}
+
+/* ........................................inventory......................................... */
+
+.inv-img{
+    width: 25px;
+    height: 30px;
+    background-image: url(../images/inventory.png);
+    background-size: 100%;
+}
+
+.inv-name{
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: rgb(192, 228, 220);
+}
+
+/* .......................................profile........................................ */
+
+
+.prof-img{
+    width: 25px;
+    height: 30px;
+    background-image: url(../images/profile.png);
+    background-size: 100%;
+}
+
+.prof-name{
+    width: 45px;
+    height: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: rgb(192, 228, 220);
+}
