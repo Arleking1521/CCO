@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Ramka from '../images/profile-image.png'
 import empty from '../images/empty-profile.jpeg'
-export default class inventory extends Component {
+export default class profile extends Component {
     render() {
         return (
             <>
