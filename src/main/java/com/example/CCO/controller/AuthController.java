@@ -1,23 +1,17 @@
 package com.example.CCO.controller;
 
-import com.example.CCO.dto.UserDto;
-import com.example.CCO.entity.User;
+import com.example.CCO.dto.LoginDTO;
+import com.example.CCO.dto.RegisterDTO;
 import com.example.CCO.exceptions.UserAlreadyExistsException;
 import com.example.CCO.exceptions.UserNotFoundException;
 import com.example.CCO.exceptions.WrongPasswordException;
 import com.example.CCO.security.JwtUtils;
-import com.example.CCO.service.UserService;
 import com.example.CCO.service.impl.UserServiceImpl;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class AuthController {
@@ -30,7 +24,7 @@ public class AuthController {
     JwtUtils jwtUtils;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody UserDto user) {
+    public ResponseEntity<?> register(@RequestBody RegisterDTO user) {
         try {
             userService.register(user);
             return ResponseEntity.ok(jwtUtils.generateToken(user.getEmail()));
@@ -42,7 +36,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody UserDto user) {
+    public ResponseEntity<?> login(@RequestBody LoginDTO user) {
         try {
             userService.login(user);
             return ResponseEntity.ok(jwtUtils.generateToken(user.getEmail()));

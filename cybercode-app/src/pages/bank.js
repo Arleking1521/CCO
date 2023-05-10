@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import {Nav} from 'react-bootstrap'
+import React from 'react';
+import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import Npc from "../images/npc/bank-npc.png";
+import dep from "../images/bank-deposit.png";
+import withdraw from "../images/bank-withdraw.png";
+import depItem from "../images/bank-deposit-items.png";
+import withdrawItem from "../images/bank-withdraw-items.png";
 
-import Npc from '../images/npc/bank-npc.png'
-import dep from '../images/bank-deposit.png'
-import withdraw from '../images/bank-withdraw.png'
-import depItem from '../images/bank-deposit-items.png'
-import withdrawItem from '../images/bank-withdraw-items.png'
-
-export default class bank extends Component {
-    render() {
-        return (
-            <>
+const Bank = () => {
+    return (
+        <>
             <div className='bank-header'>
-                <Nav.Link className='back-btn' as={Link} to={'/'}>&#8249; Back</Nav.Link> 
+                <Nav.Link className='back-btn' as={Link} to={'/'}>&#8249; Back</Nav.Link>
                 <div className='balance'>
                     <div className='bal-btc'>[99999 btc]</div>
                     <div className='bal-units'>[9999 units]</div>
@@ -60,10 +58,11 @@ export default class bank extends Component {
                             <div className='ba-desc'>Put Bitcoins into bank</div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            </>
-        )
-    }
-}
+        </>
+    );
+};
+
+export default Bank;

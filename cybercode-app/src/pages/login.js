@@ -1,11 +1,22 @@
-import React, { Component } from 'react';
+import React, {useContext, useState} from 'react';
+import Logo from "../images/logo.jpeg";
+import {Context} from "../index";
+import {login} from "../http/userAPI";
+import {observer} from "mobx-react-lite";
 
-import Logo from "../images/logo.jpeg"
-
-export default class login extends Component {
-    render() {
-        return (
-            <>
+const Login = observer(() => {
+    const {user} = useContext(Context)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const loginEvent = (e) => {
+        e.preventDefault()
+        const data = login(email, password)
+        let user1 = {email: data.sub}
+        user.setUser(user1)
+        user.setIsAuth(true)
+        //куда-то перейти
+    }
+    return (
             <main>
                 <div className="logo">
                     <div className="logo-img">
@@ -13,7 +24,7 @@ export default class login extends Component {
                     </div>
                     <div className="logo-name">CyberCodeOnline</div>
                 </div>
-                
+
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 offset-md-3">
@@ -27,30 +38,34 @@ export default class login extends Component {
                                 <div className="card-header">Login Form</div>
                                 <div className="card-body">
                                     <form
-                                            method="post"
-                                            th:action="@{/login}"
-                                            className="form"
-                                            role="form">
+                                        method="post"
+                                        th:action="@{/login}"
+                                        className="form"
+                                        role="form">
                                         <div className="inputs">
                                             <label for="username" className="control-label">Email *</label>
                                             <input type="text"
-                                                id="username"
-                                                name="username"
-                                                className="form-control"
-                                                placeholder="Email"
+                                                   id="username"
+                                                   name="username"
+                                                   value={email}
+                                                   onChange={(e)=>{setEmail(e.target.value)}}
+                                                   className="form-control"
+                                                   placeholder="Email"
                                             />
                                         </div>
-                
+
                                         <div className="inputs">
                                             <label for="password" className="control-label">Password *</label>
                                             <input type="password"
-                                                id="password"
-                                                name="password"
-                                                className="form-control"
-                                                placeholder="Password"
+                                                   id="password"
+                                                   name="password"
+                                                   value={password}
+                                                   onChange={(e)=>{setPassword(e.target.value)}}
+                                                   className="form-control"
+                                                   placeholder="Password"
                                             />
                                         </div>
-                
+
                                         <div className="inputs">
                                             <button type="submit" className="btn">Login</button>
                                             <span className="reg-text"> Not registered?
@@ -64,7 +79,7 @@ export default class login extends Component {
                     </div>
                 </div>
             </main>
-            </>
-        )
-    }
-}
+    );
+});
+
+export default Login;

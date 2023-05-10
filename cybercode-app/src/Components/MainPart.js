@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router} from "react-router-dom";
+import Footer from "./Footer";
 
-import Footer from './Footer'
+const MainPart = () => {
+    return (
+            <Router>
+                <Footer/>
+            </Router>
+    );
+};
 
-export default class MainPart extends Component {
-    render() {
-        return (
-            <>
-                <Router>
-                    <Footer/>
-                </Router>
-            </>
-        )
-    }
-}
+export default MainPart;

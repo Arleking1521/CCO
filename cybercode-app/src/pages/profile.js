@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import empty from "../images/empty-profile.jpeg";
+import Ramka from "../images/profile-image.png";
 
-import Ramka from '../images/profile-image.png'
-import empty from '../images/empty-profile.jpeg'
-export default class profile extends Component {
-    render() {
-        return (
-            <>
+const Profile = () => {
+    return (
+        <>
             <header>
                 <div className="tb">PROFILE</div>
             </header>
@@ -21,7 +20,8 @@ export default class profile extends Component {
                 </div>
                 <div className="btn-logout">LOGOUT</div>
             </div>
-            </>
-        )
-    }
-}
+        </>
+    );
+};
+
+export default Profile;

@@ -1,24 +1,16 @@
 package com.example.CCO.service.impl;
 
-import com.example.CCO.dto.UserDto;
-import com.example.CCO.entity.Level;
+import com.example.CCO.dto.LoginDTO;
+import com.example.CCO.dto.RegisterDTO;
 import com.example.CCO.entity.User;
 import com.example.CCO.exceptions.UserAlreadyExistsException;
 import com.example.CCO.exceptions.UserNotFoundException;
 import com.example.CCO.exceptions.WrongPasswordException;
-import com.example.CCO.repository.LevelRepository;
 import com.example.CCO.repository.UserRepository;
 import com.example.CCO.security.Hasher;
-import com.example.CCO.security.JwtUtils;
 import com.example.CCO.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -27,7 +19,7 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
 
-    public void register(UserDto authRequest) throws UserAlreadyExistsException {
+    public void register(RegisterDTO authRequest) throws UserAlreadyExistsException {
         if (userRepository.existsByEmail(authRequest.getEmail())) {
             throw new UserAlreadyExistsException("Email is already in use.");
         }
@@ -35,7 +27,7 @@ public class UserServiceImpl implements UserService{
         userRepository.save(user);
     }
 
-    public void login(UserDto authRequest) throws UserNotFoundException, WrongPasswordException {
+    public void login(LoginDTO authRequest) throws UserNotFoundException, WrongPasswordException {
         if (!userRepository.existsByEmail(authRequest.getEmail())) {
             throw new UserNotFoundException(authRequest.getEmail());
         }

@@ -1,58 +1,55 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+const Inventory = () => {
+    return (
+        <>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+            <div className='invCell'>
+                <div className='invCell-img'></div>
+                <div className='invCell-desc'>Common helmet cache</div>
+                <div className='invCell-count'>x50</div>
+            </div>
+        </>
+    );
+};
 
-export default class inventory extends Component {
-    render() {
-        return (
-            <>
-                
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-                <div className='invCell'>
-                    <div className='invCell-img'></div>
-                    <div className='invCell-desc'>Common helmet cache</div>
-                    <div className='invCell-count'>x50</div>
-                </div>
-
-            </>
-        )
-    }
-}
+export default Inventory;
