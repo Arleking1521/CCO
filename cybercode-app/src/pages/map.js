@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
+import {Nav} from 'react-bootstrap'
 
 import act_pic1 from '../images/diamond.png';
 import act_pic2 from '../images/cyberwear.png';
@@ -25,7 +26,6 @@ export default class map extends Component {
                     <div className="info-pic">
                         <div className="page-name"> Shangri-La City Center </div>
                         <div className="page-info">
-                            <div className="back-img"></div>
                             <div className="info">
                                 [Central Hub] <br/>
                                 One of the busiest cities in the continent. Here you can find all sorts of people from around the globe.
@@ -35,7 +35,7 @@ export default class map extends Component {
                     <div className="actions">
                         <div className="chapter-name"> INTERACTABLE</div>
                         <div className="act-row">
-                            <a className="act-items exchange-office">
+                            <a className="act-items exchange-office" >
                                 <div className="act-item-img"><img src={act_pic1}/></div>
                                 <div className="act-item-name">ARASAKA UNIT EXCHANGE</div>
                             </a>
@@ -63,10 +63,10 @@ export default class map extends Component {
                             </a>
                         </div>
                         <div className="act-row">
-                            <a className="act-items bank">
+                            <Nav.Link className="act-items bank" as={Link} to="/bank">
                                 <div className="act-item-img"><img src={act_pic7}/></div>
                                 <div className="act-item-name">BANK OF ARASAKA</div>
-                            </a>
+                            </Nav.Link>
                             <a className="act-items trade-post">
                                 <div className="act-item-img"><img src={act_pic8}/></div>
                                 <div className="act-item-name">LEE'S TRADING POST</div>

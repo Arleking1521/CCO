@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {  Routes, Route, Link } from 'react-router-dom';
 import {Nav} from 'react-bootstrap'
 
 
 import Header from './Header';
 import InvHeader from './InvHeader'
 import Profile from '../pages/profile'
+import Bank from '../pages/bank'
 
 export default class Footer extends Component {
     render() {
@@ -16,6 +17,8 @@ export default class Footer extends Component {
                     <Route exact path='/' element={<Header />} />
                     <Route exact path='/inventory' element={<InvHeader />} />
                     <Route exact path='/profile' element={<Profile />} />
+                    <Route exact path='/bank' element={<Bank />} />
+                    
                 </Routes>
 
                 <footer>

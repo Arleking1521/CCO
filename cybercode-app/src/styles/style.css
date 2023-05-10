@@ -1,47 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-*{
-    background-color: rgb(30, 30, 30);
-    padding: 0;
-    margin: 0;
-}
-
-/* ======================================custom scrollbar================================================================== */
-
-::-webkit-scrollbar{
-    width: 5px;
-}
-
-::-webkit-scrollbar-track{
-    background: rgb(91, 91, 91);
-}
-
-::-webkit-scrollbar-thumb{
-    background: rgb(128, 143, 140);
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background: rgb(192, 228, 220);
-}
-
-/* ======================================================================================================================== */
-
-#root{
-    display: flex;
-    align-items: center;
-}
-
-body{
-    margin-left: 20%;
-    margin-right: 20%;
-    font-family: 'Rajdhani';
-}
-
-
-.mainPart{
-    width: 100% ;
-    height: 100%;
-}
 
 /* ==========================================================HEADER======================================================== */
 
@@ -201,23 +158,16 @@ header{
     background: none;
     color: rgb(192, 228, 220);
 }
-.back-img{
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    filter: blur(6px);
-    background-image: url(../images/blur-img.jpg);
-    background-size: 100%;
-}
 .info{
     position: absolute;
     display: flex;
     background: none;
     padding: 20px;
+    background: none;
+    backdrop-filter: blur(15px);
 }
 
-/* ------------------------------------------------------actons---------------------------------------------------- */
+/* ------------------------------------------------------actions---------------------------------------------------- */
 
 .actions{
     display: flex;
@@ -249,17 +199,18 @@ header{
 /* ...........................................act-items.................................. */
 
 .act-items{
-    display: flex;
-    width: 220px;
-    height: 80px;
-    border: solid 1px rgb(192, 228, 220);
-    background: none;
-    align-items: center;
-    justify-content: center;
-    color: rgb(192, 228, 220);
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 220px !important;
+    height: 80px !important;
+    border: solid 1px rgb(192, 228, 220) !important;
+    background: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgb(192, 228, 220) !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
 }
 
 .act-item-img{
@@ -282,10 +233,9 @@ header{
 /* .......................................exchange-ofice..................................... */
 
 .exchange-office{
-    border: solid 1px yellow;
+    border: solid 1px yellow !important;
     box-shadow:  -3px -3px 10px rgba(255, 255, 0, 0.514), inset -3px -3px 10px rgba(255, 255, 0, 0.514);
-    color: yellow;
-    font-size: 15px;
+    color: yellow !important;
     text-shadow: yellow -5px -6px 5px;
     transition: 0.5s;
 }
@@ -297,10 +247,9 @@ header{
 /* ..........................................cyberwear........................................ */
 
 .cyberwear{
-    border: solid 1px yellow;
+    border: solid 1px yellow !important;
     box-shadow:  -3px -3px 10px rgba(255, 255, 0, 0.514), inset -3px -3px 10px rgba(255, 255, 0, 0.514);
-    color: yellow;
-    font-size: 15px;
+    color: yellow !important;
     text-shadow: yellow -5px -6px 5px;
     transition: 0.5s;
 }

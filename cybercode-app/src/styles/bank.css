@@ -1,0 +1,134 @@
+.bank-header{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    height: 50px;
+    box-shadow: 0 10px 10px rgb(30, 30, 30);
+    color: rgb(192, 228, 220);
+}
+
+.back-btn{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.balance{
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bank-main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-bottom: 50px;
+}
+
+.bank-banner{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 400px;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../images/bank-bg.jpg);
+    background-size: 100%;
+    filter: brightness(0.9);
+    border-radius: 0 35px 0 35px;
+    margin: 50px;
+}
+
+.bank-page-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    background: none;
+    margin-left: 20px;
+}
+
+.npc-info{
+    display: flex;
+    background: none;
+    padding: 20px;
+    font-size: 20px;
+    color: rgb(192, 228, 220);
+    backdrop-filter: blur(15px); 
+    margin-bottom: 20px;
+}
+
+.npc{
+    position: absolute;
+    top: 68px;
+    left: 57%;
+    width: 275px;
+    background: none;
+    height: 450px;
+}
+
+.deposit-bal{
+    width: 80%;
+    color: rgb(192, 228, 220);
+}
+
+.bank-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+.ba{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    border-radius: 0 20px 0 20px;
+    border: solid 1px rgb(91, 91, 91);
+}
+
+.ba-img{
+    width: 50px;
+    height: 50px;
+}
+
+.ba-text{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+}
+
+.ba-name{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    color: rgb(192, 228, 220);
+    align-items: center;
+    font-size: 20px;
+}
+.ba-desc{
+    width: 100%;
+    height: 40%;
+    color: rgb(91, 91, 91);
+}
