@@ -5,7 +5,7 @@ import {Context} from "../index";
 import {login} from "../http/userAPI";
 import {observer} from "mobx-react-lite";
 
-import {REG_ROUTE} from "../utils/const";
+import {MAP_ROUTE, REG_ROUTE} from "../utils/const";
 import {useNavigate} from "react-router-dom";
 
 const Login = observer(() => {
@@ -19,7 +19,7 @@ const Login = observer(() => {
         let user1 = {email: data.sub}
         user.setUser(user1)
         user.setIsAuth(true)
-        //куда-то перейти
+        navigate(MAP_ROUTE)
     }
     return (
         <main>

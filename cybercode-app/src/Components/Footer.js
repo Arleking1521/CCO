@@ -14,12 +14,7 @@ const Footer = () => {
 
     return (
         <>
-            <Routes>
-                <Route exact path='/' element={<Header/>}/>
-                <Route exact path='/inventory' element={<InvHeader/>}/>
-                <Route exact path='/profile' element={<Profile/>}/>
-                <Route exact path='/bank' element={<Bank/>}/>
-            </Routes>
+
             <footer>
                 <div className="menu">
                     <Nav.Link className="map-nl" onClick={() => {
