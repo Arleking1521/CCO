@@ -14,7 +14,7 @@ import gt_pic1 from "../images/travel.png";
 import gt_pic2 from "../images/com-area.png";
 import gt_pic3 from "../images/market.png";
 import gt_pic4 from "../images/band.png";
-
+import {BANK_ROUTE} from "../utils/const";
 const Map = () => {
     return (
             <div className='main'>
@@ -58,7 +58,7 @@ const Map = () => {
                         </a>
                     </div>
                     <div className="act-row">
-                        <Nav.Link className="act-items bank" as={Link} to="/bank">
+                        <Nav.Link className="act-items bank" to={BANK_ROUTE}>
                             <div className="act-item-img"><img src={act_pic7}/></div>
                             <div className="act-item-name">BANK OF ARASAKA</div>
                         </Nav.Link>

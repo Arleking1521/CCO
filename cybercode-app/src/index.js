@@ -7,14 +7,14 @@ import './styles/inventory.css'
 import './styles/profile.css'
 import './styles/bank.css'
 
-import PageView from './pages/PageView'
 import reportWebVitals from './reportWebVitals';
 import UserStore from "./store/UserStore";
 import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
 export const Context = createContext(null)
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<Context.Provider value={{
     user: new UserStore()

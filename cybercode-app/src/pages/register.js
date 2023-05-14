@@ -4,7 +4,7 @@ import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import {register} from "../http/userAPI";
 
-const Registrarion = observer(() => {
+const Register = observer(() => {
     const {user} = useContext(Context)
     const [nickname, setNickname] = useState('')
     const [email, setEmail] = useState('')
@@ -29,7 +29,7 @@ const Registrarion = observer(() => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        <div th:if="${param.success}">
+                        <div>
                             <div className="alert alert-info">You've successfully registered
                                 to our app!
                             </div>
@@ -37,7 +37,7 @@ const Registrarion = observer(() => {
                         <div className="card-reg">
                             <div className="card-header">Registration</div>
                             <div className="card-body">
-                                <form method="post" role="form" th:action="@{/register/save}" th:object="${user}"
+                                <form method="post" role="form"
                                       className="form">
                                     <div className="inputs">
                                         <label className="form-label">Nickame</label>
@@ -49,12 +49,9 @@ const Registrarion = observer(() => {
                                                }}
                                                name="nickname"
                                                placeholder="Enter first name"
-                                               th:field="*{nickName}"
                                                type="text"
                                         />
-                                        <p th:errors="*{nickName}" className="text-danger"
-                                           th:if="${#fields.hasErrors('nickName')}">
-                                        </p>
+
                                     </div>
                                     <div className="inputs">
                                         <label className="control-label">Email</label>
@@ -66,12 +63,9 @@ const Registrarion = observer(() => {
                                                    setEmail(e.target.value)
                                                }}
                                                placeholder="Enter email address"
-                                               th:field="*{email}"
                                                type="email"
                                         />
-                                        <p th:errors="*{email}" className="text-danger"
-                                           th:if="${#fields.hasErrors('email')}">
-                                        </p>
+
                                     </div>
                                     <div className="inputs">
                                         <label className="control-label">Password</label>
@@ -83,12 +77,10 @@ const Registrarion = observer(() => {
                                                    setPassword(e.target.value)
                                                }}
                                                placeholder="Enter password"
-                                               th:field="*{password}"
+
                                                type="password"
                                         />
-                                        <p th:errors="*{password}" className="text-danger"
-                                           th:if="${#fields.hasErrors('password')}">
-                                        </p>
+
                                     </div>
 
                                     <div className="inputs">
@@ -96,7 +88,7 @@ const Registrarion = observer(() => {
                                             registerEvent(e)
                                         }} type="submit">Register
                                         </button>
-                                        <span className="reg-text">Already registered? <a href="/" th:href="@{/login}">Login
+                                        <span className="reg-text">Already registered? <a href="/" >Login
                                             here</a></span>
                                     </div>
                                 </form>
@@ -109,4 +101,4 @@ const Registrarion = observer(() => {
     );
 });
 
-export default Registrarion;
+export default Register;
