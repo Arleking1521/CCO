@@ -3,9 +3,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
 import {Spinner} from "react-bootstrap";
-import Footer from "./components/Footer";
-import AppRouter from "./components/AppRouter";
-import {Router} from "react-router-dom";
+import Login from "./pages/login";
 
 const App = observer(() => {
     const {user} = useContext(Context);
@@ -28,10 +26,8 @@ const App = observer(() => {
      if (loading) {
          <Spinner animation={"grow"}/>
      }
-    return (<Router>
-        <AppRouter/>
-        <Footer/>
-    </Router>
+    return (
+        <Login/>
     );
 });
 

@@ -14,7 +14,11 @@ import gt_pic2 from "../assets/com-area.png";
 import gt_pic3 from "../assets/market.png";
 import gt_pic4 from "../assets/band.png";
 import {BANK_ROUTE} from "../utils/const";
+import {useHistory} from "react-router-dom";
 const Map = () => {
+
+    const history = useHistory()
+
     return (
             <div className='main'>
                 <div className="info-pic">
@@ -57,7 +61,8 @@ const Map = () => {
                         </a>
                     </div>
                     <div className="act-row">
-                        <Nav.Link className="act-items bank" to={BANK_ROUTE}>
+                        <Nav.Link className="act-items bank" onClick={() => {
+                            history.push((BANK_ROUTE))}}>
                             <div className="act-item-img"><img src={act_pic7}/></div>
                             <div className="act-item-name">BANK OF ARASAKA</div>
                         </Nav.Link>
@@ -81,7 +86,7 @@ const Map = () => {
                             <div className="gt-item-descript">[Adventure] Using the hyperloop, you can travel at supersonic speed across the continent with ease.</div>
                         </div>
                     </div>
-                    <div className="gt-items bussines">
+                    <div className="gt-items business">
                         <div className="gt-item-img"><img src={gt_pic2}/></div>
                         <div className="gt-item-info">
                             <div className="gt-item-name">GO TO SHANGRI-LA COMMERCIAL AREA</div>

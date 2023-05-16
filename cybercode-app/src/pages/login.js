@@ -5,21 +5,21 @@ import {Context} from "../index";
 import {login} from "../http/userAPI";
 import {observer} from "mobx-react-lite";
 
-import {MAP_ROUTE, REG_ROUTE} from "../utils/const";
-import {useNavigate} from "react-router-dom";
+import {HOMEPAGE_ROUTE, REG_ROUTE} from "../utils/const";
+import {useHistory} from "react-router-dom";
 
 const Login = observer(() => {
     const {user} = useContext(Context)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const navigate = useNavigate();
+    const history = useHistory()
     const click = (e) => {
         e.preventDefault()
         const data = login(email, password)
         let user1 = {email: data.sub}
         user.setUser(user1)
         user.setIsAuth(true)
-        navigate(MAP_ROUTE)
+        history.push(HOMEPAGE_ROUTE)
     }
     return (
         <main>
@@ -77,7 +77,7 @@ const Login = observer(() => {
                                 </Button>
                                 <span className="reg-text"> Not registered?
                                     <a onClick={() => {
-                                        navigate(REG_ROUTE)
+                                        history.push(REG_ROUTE)
                                     }} > Register/SignUp Here</a>
                                 </span>
                             </div>

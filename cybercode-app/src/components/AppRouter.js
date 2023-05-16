@@ -1,10 +1,12 @@
 import React, {useContext} from 'react';
-import {Routes, Route, Navigate} from "react-router-dom";
+import { Route} from "react-router-dom";
 import {adminRoutes, playerRoutes} from "../routes";
 import {MAP_ROUTE} from "../utils/const";
-import axios from "../http/axiosApi";
+import {$host} from "../http/axiosApi";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
+import Switch from "react-router-dom/es/Switch";
+import Redirect from "react-router-dom/es/Redirect";
 
 const AppRouter = observer(() => {
     const {user} = useContext(Context)
@@ -12,18 +14,18 @@ const AppRouter = observer(() => {
 
     if (user.isAuth) {
         console.log(user.user.email)
-        axios.get("/checkAdmin/" + user.user.email).then((response) => {
+        $host.get("/checkAdmin/" + user.user.email).then((data) => {
             isAdmin = data;
             user.setIsAdmin(data)
         })
     }
 
-    return (<Routes>
+    return (<Switch>
             {playerRoutes.map(({path, Component}) => <Route key={path} path={path} component={Component} exact/>)}
             {isAdmin === true && adminRoutes.map(({path, Component}) => <Route key={path} path={path}
                                                                                component={Component} exact/>)}
-            <Navigate to={MAP_ROUTE}/>
-        </Routes>
+            <Redirect to={MAP_ROUTE}/>
+        </Switch>
     );
 });
 

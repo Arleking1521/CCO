@@ -1,7 +1,8 @@
 import React from 'react';
-import Map from "../pages/map";
+import {MAP_ROUTE} from "../utils/const";
 
-const Header = () => {
+
+const HeaderPage = () => {
     return (
         <>
             <header action=" " method="post">
@@ -21,9 +22,8 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <Map/>
         </>
     );
 };
 
-export default Header;
+export default HeaderPage;
