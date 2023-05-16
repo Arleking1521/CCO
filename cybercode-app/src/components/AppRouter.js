@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Routes, Route, Navigate} from "react-router-dom";
 import {adminRoutes, playerRoutes} from "../routes";
 import {MAP_ROUTE} from "../utils/const";
-import $host from "../http/axiosApi";
+import axios from "../http/axiosApi";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 

@@ -30,7 +30,7 @@
 }
 
 .profile-img{
-    background-image: url(src/assets/empty-profile.jpeg);
+    background-image: url(../assets/empty-profile.jpeg);
     background-size: 100%;
     width: 300px;
     height: 300px;
