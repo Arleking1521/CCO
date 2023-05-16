@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import Logo from "../images/logo.jpeg";
+import Logo from "../assets/logo.jpeg";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import {register} from "../http/userAPI";

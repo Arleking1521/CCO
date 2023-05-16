@@ -3,8 +3,8 @@ import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
 import {Spinner} from "react-bootstrap";
-import Footer from "./Components/Footer";
-import AppRouter from "./Components/AppRouter";
+import Footer from "./components/Footer";
+import AppRouter from "./components/AppRouter";
 import {Router} from "react-router-dom";
 
 const App = observer(() => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Nav} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import Npc from "../images/npc/bank-npc.png";
-import dep from "../images/bank-deposit.png";
-import withdraw from "../images/bank-withdraw.png";
-import depItem from "../images/bank-deposit-items.png";
-import withdrawItem from "../images/bank-withdraw-items.png";
+import Npc from "../assets/npc/bank-npc.png";
+import dep from "../assets/bank-deposit.png";
+import withdraw from "../assets/bank-withdraw.png";
+import depItem from "../assets/bank-deposit-items.png";
+import withdrawItem from "../assets/bank-withdraw-items.png";
 
 const Bank = () => {
     return (

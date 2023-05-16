@@ -44,7 +44,7 @@
     height: 400px;
     justify-content: space-between;
     align-items: center;
-    background-image: url(../images/bank-bg.jpg);
+    background-image: url(src/assets/bank-bg.jpg);
     background-size: 100%;
     filter: brightness(0.9);
     border-radius: 0 35px 0 35px;

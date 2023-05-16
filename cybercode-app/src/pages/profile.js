@@ -1,6 +1,6 @@
 import React from 'react';
-import empty from "../images/empty-profile.jpeg";
-import Ramka from "../images/profile-image.png";
+import empty from "../assets/empty-profile.jpeg";
+import Ramka from "../assets/profile-image.png";
 
 const Profile = () => {
     return (
