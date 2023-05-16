@@ -1,5 +1,4 @@
-export const LOGIN_ROUTE = '/login'
-export const REG_ROUTE = '/register'
+
 export const MAP_ROUTE = '/'
 export const INVENTORY_ROUTE = '/inventory'
 export const PROFILE_ROUTE = '/profile'

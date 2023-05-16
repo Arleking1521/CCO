@@ -3,10 +3,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
 import {Spinner} from "react-bootstrap";
-import Footer from "./components/Footer";
-import AppRouter from "./components/AppRouter";
-import {BrowserRouter} from "react-router-dom";
-import HomePage from "./pages/homePage";
+import GamePage from "./pages/GamePage";
 
 const App = observer(() => {
     const {user} = useContext(Context);
@@ -30,7 +27,9 @@ const App = observer(() => {
          <Spinner animation={"grow"}/>
      }
     return (
-        <HomePage/>
+
+            <GamePage/>
+
     );
 });
 

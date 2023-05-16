@@ -1,7 +1,5 @@
 import{
     ADMIN_ROUTE,
-    LOGIN_ROUTE,
-    REG_ROUTE,
     MAP_ROUTE,
     BANK_ROUTE,
     INVENTORY_ROUTE,
@@ -12,33 +10,25 @@ import Header from "./components/Header";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Bank from "./pages/bank";
-import Inventory from "./pages/inventory";
+import InvHeader from "./components/InvHeader";
 import Profile from "./pages/profile";
 import AdminPanel from './pages/AdminPanel'
 export const playerRoutes = [{
-    path: LOGIN_ROUTE, Component: Login
-}, {
-    path: REG_ROUTE, Component: Register
-}, {
     path: MAP_ROUTE, Component: Header
 }, {
     path: BANK_ROUTE, Component: Bank
 }, {
-    path: INVENTORY_ROUTE, Component: Inventory
+    path: INVENTORY_ROUTE, Component: InvHeader
 }, {
     path: PROFILE_ROUTE, Component: Profile
 }]
 
 export const adminRoutes = [{
-    path: LOGIN_ROUTE, Component: Login
-}, {
-    path: REG_ROUTE, Component: Register
-}, {
     path: MAP_ROUTE, Component: Header
 }, {
     path: BANK_ROUTE, Component: Bank
 }, {
-    path: INVENTORY_ROUTE, Component: Inventory
+    path: INVENTORY_ROUTE, Component: InvHeader
 }, {
     path: PROFILE_ROUTE, Component: Profile
 }, {

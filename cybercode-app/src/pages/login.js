@@ -5,7 +5,6 @@ import {Context} from "../index";
 import {login} from "../http/userAPI";
 import {observer} from "mobx-react-lite";
 
-import { REG_ROUTE} from "../utils/const";
 import {useHistory} from "react-router-dom";
 
 const Login = observer(() => {
@@ -19,6 +18,7 @@ const Login = observer(() => {
         let user1 = {email: data.sub}
         user.setUser(user1)
         user.setIsAuth(true)
+        //куда-то перейти
     }
     return (
         <main>
@@ -74,11 +74,8 @@ const Login = observer(() => {
                                             click()}}>
                                     Login
                                 </Button>
-                                <span className="reg-text"> Not registered?
-                                    <a onClick={() => {
-                                        history.push(REG_ROUTE)
-                                    }} > Register/SignUp Here</a>
-                                </span>
+                                    <a className="reg-text"  > Not registered?</a>
+
                             </div>
                         </form>
                     </div>
