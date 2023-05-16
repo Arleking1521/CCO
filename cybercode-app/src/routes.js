@@ -5,32 +5,28 @@ import{
     MAP_ROUTE,
     BANK_ROUTE,
     INVENTORY_ROUTE,
-    PROFILE_ROUTE,
-    HOMEPAGE_ROUTE
+    PROFILE_ROUTE
 } from "./utils/const";
 
-import Map from "./pages/map";
+import Header from "./components/Header";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Bank from "./pages/bank";
 import Inventory from "./pages/inventory";
 import Profile from "./pages/profile";
 import AdminPanel from './pages/AdminPanel'
-import HomePage from "./pages/homePage";
 export const playerRoutes = [{
     path: LOGIN_ROUTE, Component: Login
 }, {
     path: REG_ROUTE, Component: Register
 }, {
-    path: MAP_ROUTE, Component: Map
+    path: MAP_ROUTE, Component: Header
 }, {
     path: BANK_ROUTE, Component: Bank
 }, {
     path: INVENTORY_ROUTE, Component: Inventory
 }, {
     path: PROFILE_ROUTE, Component: Profile
-}, {
-    path: HOMEPAGE_ROUTE, Component: HomePage
 }]
 
 export const adminRoutes = [{
@@ -38,7 +34,7 @@ export const adminRoutes = [{
 }, {
     path: REG_ROUTE, Component: Register
 }, {
-    path: MAP_ROUTE, Component: Map
+    path: MAP_ROUTE, Component: Header
 }, {
     path: BANK_ROUTE, Component: Bank
 }, {
@@ -47,6 +43,4 @@ export const adminRoutes = [{
     path: PROFILE_ROUTE, Component: Profile
 }, {
     path: ADMIN_ROUTE, Component: AdminPanel
-}, {
-    path: HOMEPAGE_ROUTE, Component: HomePage
 }]

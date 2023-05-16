@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {adminRoutes, playerRoutes} from "../routes";
 import {MAP_ROUTE} from "../utils/const";
 import {$host} from "../http/axiosApi";

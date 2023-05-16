@@ -5,7 +5,7 @@ import {Context} from "../index";
 import {login} from "../http/userAPI";
 import {observer} from "mobx-react-lite";
 
-import {HOMEPAGE_ROUTE, REG_ROUTE} from "../utils/const";
+import { REG_ROUTE} from "../utils/const";
 import {useHistory} from "react-router-dom";
 
 const Login = observer(() => {
@@ -19,7 +19,6 @@ const Login = observer(() => {
         let user1 = {email: data.sub}
         user.setUser(user1)
         user.setIsAuth(true)
-        history.push(HOMEPAGE_ROUTE)
     }
     return (
         <main>

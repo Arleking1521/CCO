@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/login_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <div class="logo-img">
+                <img src="/images/logo.jpeg" width="100%">
+            </div>
+            <div class="logo-name">CyberCodeOnline</div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">Invalid Email and Password.</div>
+                    </div>
+                    <div th:if="${param.logout}">
+                        <div class="alert alert-success">You have been logged out.</div>
+                    </div>
+                    <div class="card-log">
+                        <div class="card-header">Login Form</div>
+                        <div class="card-body-log">
+                            <form
+                                    method="post"
+                                    th:action="@{/login}"
+                                    class="form"
+                                    role="form">
+                                <div class="inputs">
+                                    <label for="username" class="control-label">Email:</label>
+                                    <input type="text"
+                                        id="username"
+                                        name="username"
+                                        class="form-control"
+                                        placeholder="Email"
+                                    />
+                                </div>
+        
+                                <div class="inputs">
+                                    <label for="password" class="control-label">Password:</label>
+                                    <input type="password"
+                                        id="password"
+                                        name="password"
+                                        class="form-control"
+                                        placeholder="Password"
+                                    />
+                                </div>
+        
+                                <div class="inputs">
+                                    <button type="submit" class="btn">Login</button>
+                                    <span class="reg-text">
+                                        <a th:href="@{/register}"> Not registered?</a>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </body>
+    </html>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Route, Routes} from "react-router-dom";
-import HeaderPage from "./HeaderPage";
+import Header from "./Header";
 import InvHeader from "./InvHeader";
 import Profile from "../pages/profile";
 import Bank from "../pages/bank";
